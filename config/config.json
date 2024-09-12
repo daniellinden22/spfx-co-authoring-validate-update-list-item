@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "cavuli-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/cavuli/CavuliWebPart.js",
+          "manifest": "./src/webparts/cavuli/CavuliWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CavuliWebPartStrings": "lib/webparts/cavuli/loc/{locale}.js"
+  }
+}
