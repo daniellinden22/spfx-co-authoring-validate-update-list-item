@@ -1,8 +1,7 @@
 import * as React from "react";
 import { SPComponentLoader } from '@microsoft/sp-loader';
-import { DisplayMode } from "@microsoft/sp-core-library";
 
-export function useSharedLockId(displayMode: DisplayMode): string | null {
+export function useSharedLockId(): string | null {
 
   const [sharedLockId, setSharedLockId] = React.useState<string | null>(null);
 
@@ -21,11 +20,9 @@ export function useSharedLockId(displayMode: DisplayMode): string | null {
   }, []);
 
   React.useEffect(() => {
-    if (displayMode === DisplayMode.Edit) {
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       getSharedLockId();
-    }
-  }, [displayMode]);
+  }, []);
 
   return sharedLockId;
 }

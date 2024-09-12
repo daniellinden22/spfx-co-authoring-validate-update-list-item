@@ -19,7 +19,7 @@ export function Cavuli(props: ICavuliProps): JSX.Element {
   const [newResponse, setNewResponse] = React.useState<string>('');
   const [sendSharedLockId, setSendSharedLockId] = React.useState<boolean>(true);
 
-  const sharedLockId = useSharedLockId(displayMode);
+  const sharedLockId = useSharedLockId();
 
   const _onClick = async (func: 'first' | 'second' | 'pnp'): Promise<void> => {
     if (sharedLockId !== null) {

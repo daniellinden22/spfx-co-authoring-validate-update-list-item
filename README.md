@@ -29,6 +29,15 @@ On SharePoint pages where co-authoring is enabled, requests to the validateUpdat
 - A toggle to enable/disable the ``sharedLockId`` in the request body.
   - If disabled, the requests made by the first and second buttons will also fail.
 
+## Known issues
+- After saving/publishing a page the ``sharedLockId`` will still be present.
+  - Not sure if this is how the Site Pages module's/component's Page Store works, or if it's just a bug in the web part.
+  - Refreshing the page will remove the ``sharedLockId``, since it is not available in the Page Store in Read mode.
+- If clicking a button (first request) too quickliy when entering Edit mode, it could cause an error from the API with the message ``"Additions to this Web site have been blocked.\n\nPlease contact the administrator to resolve this problem."``.
+  - Not sure why.
+  - Just make another request, and it should work.
+
+
 ## Requirements
 - Node version 18.20.4
 
